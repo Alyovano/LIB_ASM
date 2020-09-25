@@ -1,10 +1,28 @@
-all:
-	nasm -f macho64 *.s
-	gcc -c -Wall -Werror -Wextra main.c
-	gcc *.o
+SRCS		=	ft_strlen.s\
+				ft_write.s\
+				ft_read.s\
+
+OBJS		=	$(SRCS:.s=.o)
+
+ASM			=	nasm -f macho64
+FLAGS 		=	-Wall -Werror -Wextra
+NAME		=	libasm.a
+
+%.o:			%.s
+				$(ASM) $<
+
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm *.o
-	rm a.out
+				rm -rf $(OBJS)
 
-.PHONY: clean
+fclean:			clean
+				rm -rf $(NAME)
+				rm -rf a.out
+
+re:				fclean $(NAME)
+
+.PHONY:			clean fclean re
