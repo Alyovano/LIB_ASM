@@ -9,3 +9,6 @@ Les 6 premiers paramètres sont passés comme ça : rdi (1er paramètre), rsi (2
 ; 4th arg           Stack           ESI               RCX            R10
 ; 5th arg           Stack           EDI               R8             R8
 ; 6th arg           Stack           EBP               R9
+
+Documentation -> 
+>Jump = http://faydoc.tripod.com/cpu/je.htm
