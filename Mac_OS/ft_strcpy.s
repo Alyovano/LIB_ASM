@@ -2,15 +2,18 @@
             global  _ft_strcpy
 
 
-_ft_strcpy:	mov			rax, 0
-			mov			rcx, 0
+_ft_strcpy:	
+            mov	rax, 0
+			mov	rcx, 0
 
-boucle:		mov			dl, BYTE [rsi + rcx]
-			mov			BYTE [rdi + rcx], dl
-			cmp			BYTE dl, 0
-			je			fin
-			inc			rcx
-			jmp			boucle
+boucle:		
+            mov	dl, byte[rsi + rcx]
+			mov	byte[rdi + rcx], dl
+			cmp	byte dl, 0
+			je	fin
+			inc	rcx
+			jmp	boucle
 
-fin:		mov			rax, rdi
+fin:		
+            mov	rax, rdi
 			ret
