@@ -12,3 +12,5 @@ Les 6 premiers paramètres sont passés comme ça : rdi (1er paramètre), rsi (2
 
 Documentation -> 
 >Jump = http://faydoc.tripod.com/cpu/je.htm
+
+https://askcodez.com/images2/155807970253616.png

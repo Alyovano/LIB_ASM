@@ -5,11 +5,13 @@
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 
 size_t      ft_strlen(const char *s);
 ssize_t     ft_read(int fildes, void *buf, size_t nbyte);
 ssize_t     ft_write(int fildes, const void *buf, size_t nbyte);
 int         ft_strcmp(const char *s1, const char *s2);
+char        *ft_strcpy(char *dst, const char *src);
 
 // ft_read ne renvoie pas -1 si le fd est invalide -> IL FAUT PATCH
 
@@ -56,21 +58,26 @@ int main()
 //     printf("_____________________\n");
 //     printf("|______FT_WRITE_____|\n");
 //     printf("|___________________|\n");
-printf("|___________________|\n");
-        printf("vrai =%d\n", strcmp("Same str", "Same str"));
-        printf("mien =%d\n", ft_strcmp("Same str", "Same str"));
-printf("|___________________|\n");
-        printf("vrai =%d\n", strcmp("Salut", "Salut lol"));
-        printf("mien =%d\n", ft_strcmp("Salut", "Salut lol"));
-printf("|___________________|\n");
-        printf("vrai =%d\n", strcmp("Salu", "Salut lol"));
-        printf("mien =%d\n", ft_strcmp("Salu", "Salut lol"));
-printf("|___________________|\n");
-        printf("vrai =%d\n", strcmp("Saut", "Salut lol"));
-        printf("mien =%d\n", ft_strcmp("Saut", "Salut lol"));
-printf("|___________________|\n");
-        printf("mien =%d\n", ft_strcmp((void*)0, (void*)0));
-        printf("vrai =%d\n", strcmp((void*)0, (void*)0));
+// printf("|___________________|\n");
+//         printf("vrai =%d\n", strcmp("Same str", "Same str"));
+//         printf("mien =%d\n", ft_strcmp("Same str", "Same str"));
+// printf("|___________________|\n");
+//         printf("vrai =%d\n", strcmp("Salut", "Salut lol"));
+//         printf("mien =%d\n", ft_strcmp("Salut", "Salut lol"));
+// printf("|___________________|\n");
+//         printf("vrai =%d\n", strcmp("Salu", "Salut lol"));
+//         printf("mien =%d\n", ft_strcmp("Salu", "Salut lol"));
+// printf("|___________________|\n");
+//         printf("vrai =%d\n", strcmp("Saut", "Salut lol"));
+//         printf("mien =%d\n", ft_strcmp("Saut", "Salut lol"));
+// printf("|___________________|\n");
+//         printf("mien =%d\n", ft_strcmp((void*)0, (void*)0));
+//         printf("vrai =%d\n", strcmp((void*)0, (void*)0));
 //printf("|___________________|\n");
+        char a[] = "Coucou les copains";
+        char b[] = "Coucou les fdp ca va ou quoi ptn ? ";
+        //ft_strcpy(a, b);
+        printf("LIBASM %s\n", ft_strcpy(b, a));
+        //printf("VRAI %s\n", strcpy(b, a));
 
 }
