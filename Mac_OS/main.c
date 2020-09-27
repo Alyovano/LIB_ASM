@@ -76,7 +76,7 @@ int main()
 //printf("|___________________|\n");
         char a[] = "Coucou les copains";
         char b[] = "Coucou les fdp ca va ou quoi ptn ? ";
-        //ft_strcpy(a, b);
+        ft_strcpy(a, b);
         printf("LIBASM %s\n", ft_strcpy(b, a));
         //printf("VRAI %s\n", strcpy(b, a));
 
