@@ -1,7 +1,7 @@
                 section     .text
                 global      ft_strcmp
 
-ft_strcmp:	
+ft_strcmp:
             mov	rax, 0
 			mov	rcx, 0
             jmp verif

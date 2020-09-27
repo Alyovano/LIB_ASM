@@ -3,10 +3,11 @@ SRCS		=	ft_strlen.s\
 				ft_read.s\
 				ft_strcmp.s\
 				ft_strcpy.s\
+				ft_strdup.s\
 
 OBJS		=	$(SRCS:.s=.o)
 
-ASM			=	nasm -felf64
+ASM			=	nasm -f elf64
 FLAGS 		=	-Wall -Werror -Wextra
 NAME		=	libasm.a
 
@@ -14,6 +15,7 @@ NAME		=	libasm.a
 				$(ASM) $<
 
 all:			$(NAME)
+				gcc -no-pie main.c -L. -lasm
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
@@ -23,7 +25,9 @@ clean:
 
 fclean:			clean
 				rm -rf $(NAME)
-				rm -rf a.out
+				@rm -rf a.out
+				@rm -rf main.o
+				@rm -rf TEST_WRITE.txt
 
 re:				fclean $(NAME)
 
