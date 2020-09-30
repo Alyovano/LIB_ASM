@@ -1,32 +1,27 @@
-                section     .text
-                global      ft_strcmp
-
+    	global      ft_strcmp
 ft_strcmp:
-            mov	rax, 0
-			mov	rcx, 0
-            jmp verif
+    xor     rcx, rcx
+boucle:
+    mov     dl, BYTE[rdi + rcx]
+    cmp     dl, BYTE[rsi + rcx]
+    je      increment_or_end
+    jl      petit
+    jg      grand
 
-verif:
-            cmp rdi, byte 0x0
-            je fin_str
-            cmp rsi, byte 0x0
-            je fin_str
+increment_or_end:
+    cmp     dl, 0
+    je      end
+    inc     rcx
+    jmp     boucle
 
-boucle:		
-            mov	al, [rdi]
-			mov	cl, [rsi]
-			cmp	al, cl
-			jne	return_diff
-			cmp	al, 0
-			je	fin_str
-			cmp	cl, 0
-			je	fin_str
-			inc	rdi
-			inc	rsi
-			jmp	boucle
+petit:
+    mov     rax, -1
+    ret
 
-return_diff:		
-            sub	rax, rcx
-			ret
+grand:
+    mov     rax, 1
+    ret
 
-fin_str:	ret
+end:
+    xor     rax, rax
+    ret

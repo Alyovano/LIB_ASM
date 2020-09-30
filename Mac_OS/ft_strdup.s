@@ -5,11 +5,11 @@ section .text
     extern _malloc
 
 _ft_strdup:
-    push    rdi         ; save char *src
-    call    _ft_strlen  ; calc size
+    push    rdi
+    call    _ft_strlen
     mov     rdi, rax
     call    _malloc
-    mov     rdi, rax    ; new char* (dst) to 1st argument
-    pop     rsi         ; char *src as 2nd argument
+    mov     rdi, rax 
+    pop     rsi
     call    _ft_strcpy
     ret

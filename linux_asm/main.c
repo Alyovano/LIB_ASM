@@ -65,6 +65,8 @@ void    test_strcpy()
 void    test_read(void)
 {
         // Donner un fd invalide = -1
+        // Pour tester le errno
+        // error_location sur linux
         char buf[355];
         int fd = open("main.c", O_RDONLY);
         fd = 0;
@@ -97,12 +99,14 @@ void    test_strcmp(void)
         printf("REAL_LIB=[%d]\n", strcmp("Meme str", "Meme str"));
         printf("LIBASM=[%d]\n", ft_strcmp("Coucou", "Couleur"));
         printf("REAL_LIB=[%d]\n", strcmp("Coucou", "Couleur"));
-        printf("LIBASM=[%d]\n", ft_strcmp("Salut", "Salaud"));
+        printf("LIBASM=[%d]\n", ft_strcmp("Brouillard", "Brouillon"));
         printf("REAL_LIB=[%d]\n", strcmp("Brouillard", "Brouillon"));
         printf("LIBASM=[%d]\n", ft_strcmp("Chachacha", "Chachachi"));
         printf("REAL_LIB=[%d]\n", strcmp("Chachacha", "Chachachi"));
         printf("LIBASM=[%d]\n", ft_strcmp("i", "a"));
         printf("REAL_LIB=[%d]\n", strcmp("i", "a"));
+        printf("LIBASM=[%d]\n", ft_strcmp("zn", "zb"));
+        printf("REAL_LIB=[%d]\n", strcmp("zn", "zb"));
 }
 
 int main()
